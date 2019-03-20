@@ -1,0 +1,29 @@
+{%extends 'pages/base.html'%} 
+{% block content %}
+
+     
+    <div class="container" align="center">
+
+        <div class="row" align="center">
+          {% if articles%}
+            <h2>got {{ articles|length }} of your images {{message}}</h2>
+          {% else %}
+            <h2> Found 0 articles for the search term {{message}}</h2>
+          {% endif %}
+      
+        </div> 
+        <div class="row" align="center">
+
+                {% if articles %}
+                  {% for article in articles %}
+                    <div class="col-sm-6 col-md-3" align="center">
+                        <h1>{{article.title}}</h1>     
+                        <a href="{{article.article_image.url}}" download>
+                    <img src="{{article.article_image.url}}" class="rounded" alt="Cinque Terre" width="304" height="236"> 
+  </a>
+                    {% endfor %}
+                    {% endif %}
+                    </div>
+                  </div>
+                </div>
+{% endblock %}

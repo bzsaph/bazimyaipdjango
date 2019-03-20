@@ -1,0 +1,16 @@
+
+
+  <div class="row">
+
+  {% if articles %}
+    {% for article in articles %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{article.title}}</h1>
+          
+      </div>
+     <img src="{{article.article_image.url}}" alt="">
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+
